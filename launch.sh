@@ -5,7 +5,7 @@ if [ ! -f .env ]; then
     echo ".env not found, running setup.sh"
     bash setup.sh
 fi
-source .env
+source ./.env
 
 function showhelp () {
    # Display Help
