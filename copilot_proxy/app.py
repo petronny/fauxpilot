@@ -62,5 +62,13 @@ async def completions(data: OpenAIinput):
             media_type="application/json"
         )
 
+@app.get("/copilot_internal/v2/token")
+def get_copilot_token():
+    content = {'token': '1', 'expires_at': 2600000000, 'refresh_in': 900}
+    return JSONResponse(
+        status_code=200,
+        content=content
+    )
+
 if __name__ == "__main__":
     uvicorn.run("app:app", host="0.0.0.0", port=5000)
